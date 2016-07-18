@@ -1,0 +1,15 @@
+<?php
+include("ludbcon.php");
+$user=$_POST['txtusername'];
+$password=$_POST['txtpassword'];
+if($_POST['submit'])
+{$sql="insert into tbusername(username,password)values('$user','$password')";
+$result=mysql_query($sql);
+if($result){echo"<script language='javascript'>
+                   alert('user sucessfully registered!!')
+				   history.back();
+				   </script>";}
+else
+{echo("user exist");}}
+
+?>
